@@ -66,6 +66,7 @@ const getComment = async (movieId) => {
     return [];
   }
 };
+// eslinst disable
 const showComments = async (id) => {
   try { getCommentFromAPI = await getComment(id); } catch {
     popUpHtml(id);
