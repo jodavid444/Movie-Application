@@ -1,8 +1,7 @@
 import './style.css';
 import axios from 'axios';
-import itemsCounter from './modules/counter';
-import { getMovies } from './modules/request';
-import { GetLikes } from './modules/request';
+import itemsCounter from './modules/counter.js';
+import { getMovies, GetLikes } from './modules/request.js';
 
 const main = document.querySelector('main');
 const div = document.querySelector('.movies');
@@ -12,7 +11,7 @@ const body = document.querySelector('body');
 const commentsDiv = document.querySelector('#comments-wrapper');
 let movies = [];
 let commentHTML = '';
-let getCommentsFromAPI = [];
+let getCommentFromAPI = [];
 
 const displayMovie = async () => {
   movies = await getMovies();
@@ -59,18 +58,26 @@ const popUpHtml = (target) => {
     </div>`;
 };
 
+const getComment = async (movieId) => {
+  try {
+    const comments = await axios.get(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XMHWey4za3iNnBFD5KUq/comments?item_id=${movieId}`);
+    return comments.data;
+  } catch {
+    return [];
+  }
+};
 const showComments = async (id) => {
-  try { getCommentsFromAPI = await getComments(id); } catch {
+  try { getCommentFromAPI = await getComment(id); } catch {
     popUpHtml(id);
     commentHTML = '<p>No Comments Yet</p>';
-    getCommentsFromAPI = [];
+    getCommentFromAPI = [];
   }
-  if (getCommentsFromAPI.length === 0) {
+  if (getCommentFromAPI.length === 0) {
     commentHTML = '<p>No Comments Yet</p>';
   } else {
-    getCommentsFromAPI.forEach((i) => { commentHTML += `<p>${i.creation_date} ${i.username}: ${i.comment}</p>`; });
+    getCommentFromAPI.forEach((i) => { commentHTML += `<p>${i.creation_date} ${i.username}: ${i.comment}</p>`; });
   }
-  let commentCount = itemsCounter(getCommentsFromAPI);
+  const commentCount = itemsCounter(getCommentFromAPI);
   comments.innerHTML
   += `<div id='comment-area'>
         <h2>Comments (${commentCount})</h2>
@@ -96,36 +103,26 @@ const postNewComments = (movieID, userName, userComment) => {
   showComments(movieID);
 };
 
-const getComments = async (movieId) => {
-  try {
-    const comments = await axios.get(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XMHWey4za3iNnBFD5KUq/comments?item_id=${movieId}`);
-    return comments.data;
-  } catch {
-    return [];
+const links = document.querySelectorAll('nav li a');
+const resetLinks = () => {
+  for (let i = 0; i < links.length; i += 1) {
+    links[i].classList.remove('active');
   }
 };
-
-const links = document.querySelectorAll('nav li a');
-  const resetLinks = () => {
-    console.log(links);
-    for (let i = 0; i < links.length; i += 1) {
-      links[i].classList.remove('active');
-    }
-  };
 
 body.addEventListener('click', (e) => {
   const indexID = e.target.parentNode.id;
   if (e.target.classList.contains('shows')) {
     resetLinks();
     e.target.classList.add('active');
-    main.innerHTML='';
+    main.innerHTML = '';
     main.append(div);
-  }else if (e.target.className === 'comment-button') {
+  } else if (e.target.className === 'comment-button') {
     body.classList.add('fixed');
     popUpHtml(indexID);
     commentHTML = '';
     showComments(indexID);
-    commentsDiv.classList.remove('d-none')
+    commentsDiv.classList.remove('d-none');
   } else if (e.target.classList.contains('fa-heart')) {
     updateLikes(e.target);
     displayMovie();
@@ -142,7 +139,6 @@ body.addEventListener('click', (e) => {
     } else {
       const p = e.target.previousElementSibling;
       p.innerText = 'Please insert your name and comment.';
-  
     }
   } else if (e.target.classList.contains('fa-times')) {
     comments.innerHTML = '';
