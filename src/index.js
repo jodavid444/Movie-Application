@@ -58,7 +58,6 @@ const popUpHtml = (target) => {
     </div>`;
 };
 
-// eslint disable
 const getComments = async (movieId) => {
   try {
     const comments = await axios.get(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XMHWey4za3iNnBFD5KUq/comments?item_id=${movieId}`);
@@ -97,7 +96,7 @@ const showComments = async (id) => {
 };
 
 const postNewComments = async (movieID, userName, userComment) => {
- await axios.post('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XMHWey4za3iNnBFD5KUq/comments', {
+  await axios.post('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XMHWey4za3iNnBFD5KUq/comments', {
     item_id: movieID,
     username: userName,
     comment: userComment,
