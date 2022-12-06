@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: teal;
+}
+
+header {
+  background-color: #131116;
+  margin-bottom: auto;
+}
+
+/* Style the active/current link */
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 5%;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 15%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+.nav-ul li a {
+  color: rgb(44, 86, 179);
+  font-size: 1.7rem;
+}
+
+nav ul li a:hover {
+  background-color: #ddd;
+  color: blue;
+}
+
+#veido-icon {
+  color: white;
+  font-size: 60px;
+}
+
+.active {
+  border-bottom: 1px solid #246cf1;
+  font-weight: bold;
+  color: white;
+}
+
+span {
+  display: block;
+}
