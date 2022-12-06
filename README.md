@@ -98,13 +98,13 @@ You can deploy this project using:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Riyana**
 
 - GitHub: [@ibtisam34](https://github.com/ibtisam34)
 - Twitter: [@Queenjin2](https://twitter.com/Queenjin2)
 
 
-👤 **Author2**
+👤 **Joseph David**
 
 - GitHub: [@jodavid444](https://github.com/jodavid444)
 - Twitter: [@jodavid444dave](https://twitter.com/jodavid444dave)
