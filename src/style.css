@@ -139,12 +139,12 @@ footer {
   margin-bottom: 60px;
   margin-left: 5%;
   margin-right: 5%;
-  font-family: "Roboto" sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #000;
   border-top: 2px solid black;
   border-bottom: 2px solid rgb(177, 27, 139);
   border-right: 2px solid rgb(104, 10, 10);
   border-left: 2px solid rgb(83, 45, 126);
-  text-align: center; 
-} 
+  text-align: center;
+}
