@@ -96,8 +96,8 @@ const showComments = async (id) => {
       </div>`;
 };
 
-const postNewComments = (movieID, userName, userComment) => {
-  axios.post('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XMHWey4za3iNnBFD5KUq/comments', {
+const postNewComments = async (movieID, userName, userComment) => {
+ await axios.post('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XMHWey4za3iNnBFD5KUq/comments', {
     item_id: movieID,
     username: userName,
     comment: userComment,

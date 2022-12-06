@@ -117,7 +117,7 @@ You can deploy this project using:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
+  I will add mobile version since I have desktop version of the app
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
