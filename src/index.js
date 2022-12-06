@@ -11,7 +11,7 @@ const body = document.querySelector('body');
 const commentsDiv = document.querySelector('#comments-wrapper');
 let movies = [];
 let commentHTML = '';
-let getCommentFromAPI = [];
+let getCommentsFromAPI = [];
 
 const displayMovie = async () => {
   movies = await getMovies();
@@ -58,7 +58,8 @@ const popUpHtml = (target) => {
     </div>`;
 };
 
-const getComment = async (movieId) => {
+// eslint disable
+const getComments = async (movieId) => {
   try {
     const comments = await axios.get(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/XMHWey4za3iNnBFD5KUq/comments?item_id=${movieId}`);
     return comments.data;
@@ -66,22 +67,22 @@ const getComment = async (movieId) => {
     return [];
   }
 };
-// eslinst disable
+
 const showComments = async (id) => {
-  try { getCommentFromAPI = await getComment(id); } catch {
+  try { getCommentsFromAPI = await getComments(id); } catch {
     popUpHtml(id);
     commentHTML = '<p>No Comments Yet</p>';
-    getCommentFromAPI = [];
+    getCommentsFromAPI = [];
   }
-  if (getCommentFromAPI.length === 0) {
+  if (getCommentsFromAPI.length === 0) {
     commentHTML = '<p>No Comments Yet</p>';
   } else {
-    getCommentFromAPI.forEach((i) => { commentHTML += `<p>${i.creation_date} ${i.username}: ${i.comment}</p>`; });
+    getCommentsFromAPI.forEach((i) => { commentHTML += `<p>${i.creation_date} ${i.username}: ${i.comment}</p>`; });
   }
-  const commentCount = itemsCounter(getCommentFromAPI);
+  const commentsCount = itemsCounter(getCommentsFromAPI);
   comments.innerHTML
   += `<div id='comment-area'>
-        <h2>Comments (${commentCount})</h2>
+        <h2>Comments (${commentsCount})</h2>
         ${commentHTML}
       </div>
       <div id='comment-form'>
