@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: teal;
+}
+
+header {
+  background-color: #131116;
+  margin-bottom: auto;
+}
+
+/* Style the active/current link */
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 5%;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 15%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+.nav-ul li a {
+  color: rgb(44, 86, 179);
+  font-size: 1.7rem;
+}
+
+nav ul li a:hover {
+  background-color: #ddd;
+  color: blue;
+}
+
+#veido-icon {
+  color: white;
+  font-size: 60px;
+}
+
+.title {
+  border: 2px solid black;
+  background: blue;
+  border-radius: 50%;
+  margin-top: 0 !important;
+}
+
+.active {
+  border-bottom: 1px solid #246cf1;
+  font-weight: bold;
+  color: white;
+}
+
+span {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+main {
+  min-height: 50vh;
+}
+
+.movies {
+  display: grid;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 100%;
+}
+
+.movie img {
+  width: 100%;
+  padding: 5px;
+}
+
+.movie .likes .like-p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.movie .likes {
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.likes .like-button {
+  border: none;
+  background: transparent;
+  margin: 0 3px;
+}
+
+.comment-button {
+  border: solid;
+  border-radius: 50px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 19px;
+  color: rgb(37, 34, 34);
+  background: #24f1b3;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.comment-button:hover {
+  color: #d6d7d8;
+  background: #831e2e;
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.fixed {
+  position: fixed;
+}
+
+#comments-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c1c7d0b9;
+  z-index: 3;
+  overflow-y: auto;
+}
+
+.comments {
+  background-color: rgb(134, 54, 110);
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 3px solid #ebecf0;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.fa-times {
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 30px;
+}
+
+#img-div {
+  position: relative;
+}
+
+#img-div img {
+  max-width: 100%;
+}
+
+#comment-area {
+  margin: 10px 10px;
+  background-color: #fff;
+  border: 1px solid #ad3650;
+  box-shadow: -1px -1px 10px 5px #1c328a;
+  border-radius: 10px;
+}
+
+#comment-area h2 {
+  padding: 15px;
+}
+
+#comment-feature > * {
+  padding: 15px;
+}
+
+#comment-form form > * {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+#comment-area > *:not(:first-child) {
+  text-align: start;
+  background-color: #ebecf0;
+  padding: 20px;
+  margin: 10px 15px;
+  border-radius: 10px;
+}
+
+#pop h2 {
+  margin: 3px 0;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#comment-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+#comment-feature {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.text-content p {
+  margin: 15px;
+}
+
+.text-content li {
+  list-style: none;
+  margin: 10px;
+}
+
+footer {
+  margin-top: 70px;
+  margin-bottom: 60px;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #000;
+  border-top: 2px solid black;
+  border-bottom: 2px solid rgb(177, 27, 139);
+  border-right: 2px solid rgb(104, 10, 10);
+  border-left: 2px solid rgb(83, 45, 126);
+  text-align: center;
+}
