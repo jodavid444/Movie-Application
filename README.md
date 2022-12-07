@@ -42,7 +42,7 @@ tvmaze API and Involvment API
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://ibtisam34.github.io/group-capstone//dist/)
+- [Live Demo Link](https://ibtisam34.github.io/group-capstone/dist/)
 
 - > a link to our Kanban board  https://github.com/Ibtisam34/kanban-board/projects/1
 - >Approved issue by microverse reviewers https://github.com/Ibtisam34/kanban-board/issues/21
