@@ -47,7 +47,7 @@ tvmaze API and Involvment API
 - > a link to our Kanban board  https://github.com/Ibtisam34/kanban-board/projects/1
 - >Approved issue by microverse reviewers https://github.com/Ibtisam34/kanban-board/issues/21
 > @ibtisam34 proudest reviewed pull-request https://github.com/Ibtisam34/group-capstone/pull/3
-> 
+> @jodavid444 reviewed pull-request https://github.com/Ibtisam34/group-capstone/pull/1
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
