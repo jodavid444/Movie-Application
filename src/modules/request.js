@@ -3,7 +3,7 @@ import axios from 'axios';
 const getMovies = async () => {
   const result = await axios.get('https://api.tvmaze.com/shows');
   let movies = result.data;
-  movies = movies.slice(0, 9);
+  movies = movies.slice(0, 6);
   return movies;
 };
 
